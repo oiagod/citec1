@@ -1,17 +1,42 @@
 import React, { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, StatusBar } from 'react-native';
 
 export const LoginScreen = ({ navigation }) => {
+  
+  // AsyncStorage
+  const storeData = async (key, value) => {
+    try {
+      await AsyncStorage.setItem(key, value)
+    } catch (e) {
+      console.error("Erro ao salvar o email!", e);
+    }
+  }
+
+
+  const getData = async (key) => {
+    try { 
+      const value = await AsyncStorage.getItem(key);
+      if (value != null) {
+        console.log(value);
+      }
+    } catch (e) {
+      console.error("Erro ao buscar o Email!")
+    }
+  }
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
   const handleEmailChange = (text) => {
     setEmail(text);
+    storeData('key-email', text);
   };
+
 
   const handlePasswordChange = (text) => {
     setPassword(text);
+    storeData('key-password', text);
   };
 
   const forgotPassword = () => {
@@ -30,6 +55,7 @@ export const LoginScreen = ({ navigation }) => {
 
   const loginApple = () => {
     console.log("Login using apple");
+    getData('key-email');
   };
 
   const loginFacebook = () => {
