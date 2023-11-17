@@ -16,7 +16,7 @@ export const UserProfile = ({ navigation }) => {
             </TouchableOpacity>
             <SafeAreaView>
               <View style={styles.profileImage}>
-                <Image source={require('../../Assets/user-icon.jpg')}/>
+                <Image source={require('../../src/assets/user-icon.jpg')}/>
                 <View style={styles.linha}/>
               </View>
               <StatusBar />

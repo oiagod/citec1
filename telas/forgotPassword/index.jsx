@@ -58,7 +58,7 @@ export const ForgotPassword = ({ navigation }) => {
             <SafeAreaView style={styles.container}>
                 <View style={{ paddingHorizontal: 25, alignItems: 'center' }}>
                     <View style={styles.logo}>
-                        <Image source={require('../../Assets/Logo.png')} />
+                        <Image source={require('../../src/assets/Logo.png')} />
                     </View>
                     <View style={{ alignItems: 'center', position: 'absolute' }}>
                         <View style={styles.loginbox}>

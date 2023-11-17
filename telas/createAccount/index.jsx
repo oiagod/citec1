@@ -54,7 +54,7 @@ export const CreateAccount = ({ navigation }) => {
       <SafeAreaView style={styles.container}>
         <View style={{ paddingHorizontal: 25, alignItems: 'center' }}>
           <View style={styles.logo}>
-            <Image source={require('../../Assets/Logo.png')} />
+            <Image source={require('../../src/assets/Logo.png')} />
           </View>
           <View style={{ alignItems: 'center', position: 'absolute', top: -70 }}>
             <View style={styles.loginbox}>
@@ -76,13 +76,13 @@ export const CreateAccount = ({ navigation }) => {
             </View>
             <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
               <TouchableOpacity style={styles.gafbutton} onPress={loginGoogle}>
-                <Image source={require('../../Assets/Google.png')} />
+                <Image source={require('../../src/assets/Google.png')} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.gafbutton} onPress={loginApple}>
-                <Image source={require('../../Assets/Apple.png')} />
+                <Image source={require('../../src/assets/Apple.png')} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.gafbutton} onPress={loginFacebook}>
-                <Image source={require('../../Assets/Facebook.png')} />
+                <Image source={require('../../src/assets/Facebook.png')} />
               </TouchableOpacity>
             </View>
           </View>

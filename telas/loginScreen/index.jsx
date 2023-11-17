@@ -39,20 +39,24 @@ export const LoginScreen = ({ navigation }) => {
   return (
     <View style={{ height: '100%', backgroundColor: '#191919' }}>
       <SafeAreaView style={styles.container}>
+      
         <View style={{ paddingHorizontal: 25, alignItems: 'center' }}>
           <View style={styles.logo}>
-            <Image source={require('../../Assets/Logo.png')} />
+            <Image source={require('../../src/assets/Logo.png')} />
           </View>
+
           <View style={{alignItems: 'center', position: 'absolute'}}>
             <View style={styles.loginbox}>
               <TextInput style={styles.inputEmail} placeholder='Email ' placeholderTextColor="#C3C3C3" keyboardType='email-address' onChangeText={handleEmailChange} />
             </View>
+
             <View style={styles.loginbox}>
               <TextInput style={styles.inputPassword} placeholder='Senha' placeholderTextColor="#C3C3C3" secureTextEntry={true} onChangeText={handlePasswordChange} />
               <TouchableOpacity onPress={forgotPassword} style={{ justifyContent: 'center', paddingRight: 10 }}>
                 <Text style={styles.textWhite}>Esqueceu?</Text>
               </TouchableOpacity>
             </View>
+
             <TouchableOpacity style={styles.loginbutton} onPress={handleLogin}>
               <Text style={styles.loginButtonText}>Login</Text>
             </TouchableOpacity>
@@ -66,13 +70,13 @@ export const LoginScreen = ({ navigation }) => {
             </View>
             <View style={{ marginTop: 20, flexDirection: 'row', alignItems: 'center' }}>
               <TouchableOpacity style={styles.gafbutton} onPress={loginGoogle}>
-                <Image source={require('../../Assets/Google.png')} />
+                <Image source={require('../../src/assets/Google.png')} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.gafbutton} onPress={loginApple}>
-                <Image source={require('../../Assets/Apple.png')} />
+                <Image source={require('../../src/assets/Apple.png')} />
               </TouchableOpacity>
               <TouchableOpacity style={styles.gafbutton} onPress={loginFacebook}>
-                <Image source={require('../../Assets/Facebook.png')} />
+                <Image source={require('../../src/assets/Facebook.png')} />
               </TouchableOpacity>
             </View>
           </View>
