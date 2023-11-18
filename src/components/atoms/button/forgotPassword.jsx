@@ -6,7 +6,7 @@ const ForgotPassword = ({ navigation }) => {
       };
 
     return ( 
-    <TouchableOpacity onPress={forgotPassword} style={ forgotText }>
+    <TouchableOpacity onPress={forgotPassword} style={ styles.forgotText }>
         <Text style={ styles.textWhite}>Esqueceu?</Text>
     </TouchableOpacity>)
 }

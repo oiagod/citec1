@@ -1,12 +1,14 @@
 import { View, TextInput, StyleSheet} from "react-native";
 
-const InputPassword = ({ setPassword }) => {
+import  ForgotPassword  from "../button/forgotPassword";
+
+const InputPassword = ({ setPassword, navigation }) => {
     const handlePasswordChange = (text) => {
         setPassword(text);
       };
 
     return (
-        <View style={ styles.loginbox}>
+      <View style={ styles.loginbox}>
         <TextInput 
             style={ styles.inputPassword } 
             placeholder='Senha' 
@@ -14,6 +16,7 @@ const InputPassword = ({ setPassword }) => {
             secureTextEntry={true}
             onChangeText={handlePasswordChange}
         />
+        <ForgotPassword navigation={navigation}/>
     </View>
     )
     

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 const Separator = () => {
     return (
@@ -12,6 +12,7 @@ const styles = StyleSheet.create ({
         height: 2,
         width: '33%',
         marginHorizontal: 30,
+        
       },
 });
 

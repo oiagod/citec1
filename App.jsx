@@ -7,9 +7,9 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import LoginScreen from './telas/loginScreen/indexAtomic';
 // import { LoginScreen } from './telas/loginScreen';
-// import { CreateAccount } from './telas/createAccount';
-// import { HomeScreen } from './telas/homeScreen';
-// import { ForgotPassword } from './telas/forgotPassword';
+import { CreateAccount } from './telas/createAccount';
+import { HomeScreen } from './telas/homeScreen';
+import { ForgotPassword } from './telas/forgotPassword';
 // import { UserProfile } from './telas/userProfile';
 
 const Stack = createNativeStackNavigator();
@@ -36,9 +36,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
-        {/* <Stack.Screen name="CreateAccount" component={CreateAccount} /> */}
-        {/* <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> */}
-        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+        <Stack.Screen name="CreateAccount" component={CreateAccount} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
         {/* <Stack.Screen name="UserProfile" component={UserProfile}/> */}
       </Stack.Navigator>
     </NavigationContainer>

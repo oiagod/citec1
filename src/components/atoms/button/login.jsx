@@ -1,7 +1,7 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const LoginButton = () => {
-  const handleLogin = ({ email, password, navigation }) => {
+const LoginButton = ({navigation}) => {
+  const handleLogin = ({ email, password }) => {
     navigation.navigate("HomeScreen")
     console.log("Email: ", email);
     console.log("Password: ", password);

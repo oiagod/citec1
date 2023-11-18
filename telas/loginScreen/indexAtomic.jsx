@@ -4,6 +4,8 @@ import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacit
 import LoginForm from '../../src/components/molecules/loginForm';
 import LoginFooter from '../../src/components/molecules/loginFooter';
 
+
+
 const LoginScreen = ({ navigation }) => {
 
   const [email, setEmail] = useState()
@@ -12,9 +14,15 @@ const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={ styles.container }>
       <View>
-        <LoginForm />
-        <LoginFooter />
+        <Image source={require('../../src/assets/Logo.png')} style={ styles.logo}/>
+        <LoginForm 
+          navigation={navigation}
+          setEmail={setEmail}
+          setPassword={setPassword}
+        />
       </View>
+        <LoginFooter />
+      <StatusBar />
     </SafeAreaView>  
   )
 }
@@ -24,7 +32,15 @@ const styles = StyleSheet.create ({
     flex: 1,
     backgroundColor: '#191919',
     justifyContent: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 10,
+  },
+  
+  logo: {
+    // marginBottom: 60,
+    alignItems: 'center',
+    position: 'absolute',
+    top: -250,
+    right: 90,
   },
 
 })
