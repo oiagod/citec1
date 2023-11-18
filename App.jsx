@@ -5,9 +5,10 @@ import { Text } from 'react-native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import LoginScreen from './telas/loginScreen/indexAtomic';
-// import { LoginScreen } from './telas/loginScreen';
-import { CreateAccount } from './telas/createAccount';
+import LoginScreen from './src/components/pages/loginScreen/index.jsx';
+// import { LoginScreen } from './telas/loginScreen'; login screen antiga
+// import { CreateAccount } from './telas/createAccount'; create account antiga
+import CreateAccount from './src/components/pages/createAccount/index.js';
 import { HomeScreen } from './telas/homeScreen';
 import { ForgotPassword } from './telas/forgotPassword';
 // import { UserProfile } from './telas/userProfile';

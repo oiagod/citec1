@@ -2,7 +2,7 @@ import { View, TextInput, StyleSheet} from "react-native";
 
 import  ForgotPassword  from "../button/forgotPassword";
 
-const InputPassword = ({ setPassword, navigation }) => {
+const InputPassword = ({ setPassword, navigation, showButtons }) => {
     const handlePasswordChange = (text) => {
         setPassword(text);
       };
@@ -16,7 +16,11 @@ const InputPassword = ({ setPassword, navigation }) => {
             secureTextEntry={true}
             onChangeText={handlePasswordChange}
         />
+        {showButtons && (
+          <>
         <ForgotPassword navigation={navigation}/>
+          </>
+        )}
     </View>
     )
     

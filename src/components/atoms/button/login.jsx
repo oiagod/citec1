@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const LoginButton = ({navigation}) => {
+const LoginButton = ({navigation, buttonText = 'Login'}) => {
   const handleLogin = ({ email, password }) => {
     navigation.navigate("HomeScreen")
     console.log("Email: ", email);
@@ -8,7 +8,7 @@ const LoginButton = ({navigation}) => {
   };
   return (
     <TouchableOpacity style={ styles.loginbutton } onPress={handleLogin}>
-      <Text style={ styles.loginButtonText }>Login</Text>
+      <Text style={ styles.loginButtonText }>{buttonText}</Text>
     </TouchableOpacity>
   )
         

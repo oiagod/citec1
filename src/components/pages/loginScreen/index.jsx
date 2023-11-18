@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, StatusBar } from 'react-native';
 
-import LoginForm from '../../src/components/molecules/loginForm';
-import LoginFooter from '../../src/components/molecules/loginFooter';
+import LoginForm from '../../molecules/loginForm';
+import LoginFooter from '../../molecules/loginFooter';
 
 
 
@@ -14,14 +14,16 @@ const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={ styles.container }>
       <View>
-        <Image source={require('../../src/assets/Logo.png')} style={ styles.logo}/>
+        <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
         <LoginForm 
           navigation={navigation}
           setEmail={setEmail}
           setPassword={setPassword}
+          buttonText={"Login"}
+          showButtons={true}
         />
       </View>
-        <LoginFooter />
+      <LoginFooter />
       <StatusBar />
     </SafeAreaView>  
   )
