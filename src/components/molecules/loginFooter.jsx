@@ -42,8 +42,11 @@ const LoginFooter = () => {
 
 const styles = StyleSheet.create ({
     container: {
-        position: 'absolute',
-        bottom: 60,
+        // flex: 1,
+        // justifyContent: 'flex-end',
+        marginBottom: '15%',
+        // position: 'absolute',
+        // bottom: 60,
     },
 
       footerBox: {
@@ -66,5 +69,4 @@ const styles = StyleSheet.create ({
         bottom: -260,
     },
 })
-
 export default LoginFooter;

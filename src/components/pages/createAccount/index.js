@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { View, StyleSheet, SafeAreaView, Image, StatusBar} from 'react-native';
 
-import LoginForm from "../../molecules/loginForm";
+import CreateAccountForm from "../../molecules/createAccountForm";
 import LoginFooter from "../../molecules/loginFooter";
 import ReturnButton from "../../atoms/button/returnButton";
 import InputConfirmPassowrd from "../../atoms/input/inputConfirmPassowrd";
@@ -30,17 +30,15 @@ const handlePasswordChange = (text) => {
         <ReturnButton navigation={navigation}/>
         <View>
         <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
-        <LoginForm
-            navigation={navigation}
-            setEmail={setEmail}
-            setPassword={setPassword}
-            setPassword2={setPassword2}
-            buttonText={"Criar conta"}
-            showButtons={false}
-            showInputConfirm={false}
+        <CreateAccountForm 
+          navigation={navigation}
+          setEmail={setEmail}
+          setPassword={setPassword}
+          setPassword2={setPassword2}
+          buttonText={"Criar Conta"}
+
         />
         <View styles={styles.loginbox}>
-          <InputConfirmPassowrd placeholderText={"Confirmar senha"}/>
         </View>
         </View>
         <LoginFooter />
@@ -54,27 +52,18 @@ const styles = StyleSheet.create ({
   container: {
     flex: 1,
     backgroundColor: '#191919',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     paddingHorizontal: 10,
   },
   
   logo: {
-    // marginBottom: 60,
-    alignItems: 'center',
-    position: 'absolute',
-    top: -250,
-    right: 90,
+    marginBottom: '25%',
+    alignSelf: 'center',
   },
-  formBox: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center', 
-    alignSelf: 'stretch',
-},
+
 
 // loginbox: {
-//   flexDirection: 'row',
-//   justifyContent: 'space-between',
+//   alignContent: 'stretch',
 //   width: '90%',
 //   marginBottom: 20,
 //   borderRadius: 20,

@@ -32,20 +32,15 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
+    justifyContent: 'flex-end',
     backgroundColor: '#191919',
-    justifyContent: 'space-evenly',
     paddingHorizontal: 10,
   },
-  
-  logo: {
-    // marginBottom: 60,
-    alignItems: 'center',
-    position: 'absolute',
-    top: -250,
-    right: 90,
-  },
 
-  
+  logo: {
+    marginBottom: '25%',
+    alignSelf: 'center',
+  },
 
 })
 

@@ -25,9 +25,8 @@ const styles = StyleSheet.create ({
     },
 
     returnButton: {
-        position: 'absolute',
-        top: -380,
-        left: 10,
+        // position: 'absolute',
+        top: -80,
         width: 60, // Adjust the width as needed
         height: 60, // Adjust the height as needed
       },
