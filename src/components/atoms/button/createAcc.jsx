@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     createText: {
         alignSelf: 'flex-end',
         paddingRight: 30,
-        marginBottom: 20,
+        marginTop: '5%',
+        // marginBottom: 20,
     }
 });
 

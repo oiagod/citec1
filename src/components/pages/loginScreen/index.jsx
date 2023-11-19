@@ -33,7 +33,7 @@ const styles = StyleSheet.create ({
   container: {
     flex: 1,
     backgroundColor: '#191919',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     paddingHorizontal: 10,
   },
   
@@ -44,6 +44,8 @@ const styles = StyleSheet.create ({
     top: -250,
     right: 90,
   },
+
+  
 
 })
 

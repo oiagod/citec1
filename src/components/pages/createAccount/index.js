@@ -39,7 +39,9 @@ const handlePasswordChange = (text) => {
             showButtons={false}
             showInputConfirm={false}
         />
-        <InputConfirmPassowrd placeholderText={"Confirmar senha"}/>
+        <View styles={styles.loginbox}>
+          <InputConfirmPassowrd placeholderText={"Confirmar senha"}/>
+        </View>
         </View>
         <LoginFooter />
         {/* <StatusBar /> */}
@@ -63,6 +65,23 @@ const styles = StyleSheet.create ({
     top: -250,
     right: 90,
   },
+  formBox: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center', 
+    alignSelf: 'stretch',
+},
+
+// loginbox: {
+//   flexDirection: 'row',
+//   justifyContent: 'space-between',
+//   width: '90%',
+//   marginBottom: 20,
+//   borderRadius: 20,
+//   height: 50,
+//   backgroundColor: '#1e2817',
+//   // O correto seria colocar a cor #43AF00 e uma opacidade de 0.1, mas sem alterar a opacidade da letra interna
+// },
 
 })
 
