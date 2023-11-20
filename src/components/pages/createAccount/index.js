@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { View, StyleSheet, SafeAreaView, Image, StatusBar} from 'react-native';
+import { View, StyleSheet, SafeAreaView, Image, KeyboardAvoidingView, Platform} from 'react-native';
 
 import CreateAccountForm from "../../molecules/createAccountForm";
 import LoginFooter from "../../molecules/loginFooter";
@@ -10,8 +10,6 @@ const CreateAccount = ({ navigation}) => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [password2, setPassword2] = useState()
-
-
 
 const handleEmailChange = (text) => {
     setEmail(text);
@@ -27,21 +25,25 @@ const handlePasswordChange = (text) => {
 
   return (
     <SafeAreaView style={ styles.container}>
+      <KeyboardAvoidingView 
+        behavior={Platform.OS == 'ios' ? 'padding' : 'height'} 
+        style={styles.KeyboardAvoidingContainer}
+      >
         <ReturnButton navigation={navigation}/>
-        <View>
-        <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
-        <CreateAccountForm 
-          navigation={navigation}
-          setEmail={setEmail}
-          setPassword={setPassword}
-          setPassword2={setPassword2}
-          buttonText={"Criar Conta"}
-
-        />
-        <View styles={styles.loginbox}>
-        </View>
-        </View>
-        <LoginFooter />
+          <View>
+            <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
+            <CreateAccountForm 
+              navigation={navigation}
+              setEmail={setEmail}
+              setPassword={setPassword}
+              setPassword2={setPassword2}
+              buttonText={"Criar Conta"}
+            />
+            <View styles={styles.loginbox}>
+            </View>
+          </View>
+      </KeyboardAvoidingView>
+      <LoginFooter />
         {/* <StatusBar /> */}
     </SafeAreaView>
   )
@@ -52,7 +54,7 @@ const styles = StyleSheet.create ({
   container: {
     flex: 1,
     backgroundColor: '#191919',
-    justifyContent: 'flex-end',
+    // justifyContent: 'flex-end',
     paddingHorizontal: 10,
   },
   
@@ -61,16 +63,11 @@ const styles = StyleSheet.create ({
     alignSelf: 'center',
   },
 
-
-// loginbox: {
-//   alignContent: 'stretch',
-//   width: '90%',
-//   marginBottom: 20,
-//   borderRadius: 20,
-//   height: 50,
-//   backgroundColor: '#1e2817',
-//   // O correto seria colocar a cor #43AF00 e uma opacidade de 0.1, mas sem alterar a opacidade da letra interna
-// },
+  KeyboardAvoidingContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    paddingBottom: 15,
+  }
 
 })
 

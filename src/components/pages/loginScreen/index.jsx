@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Image, StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
 
 import LoginForm from '../../molecules/loginForm';
 import LoginFooter from '../../molecules/loginFooter';
@@ -13,6 +13,10 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={ styles.container }>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+        style={styles.KeyboardAvoidingContainer}
+      >
       <View>
         <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
         <LoginForm 
@@ -23,6 +27,7 @@ const LoginScreen = ({ navigation }) => {
           showButtons={true}
         />
       </View>
+    </KeyboardAvoidingView>
       <LoginFooter />
       <StatusBar />
     </SafeAreaView>  
@@ -32,7 +37,7 @@ const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end', 
     backgroundColor: '#191919',
     paddingHorizontal: 10,
   },
@@ -40,6 +45,11 @@ const styles = StyleSheet.create ({
   logo: {
     marginBottom: '25%',
     alignSelf: 'center',
+  },
+
+  KeyboardAvoidingContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 
 })
