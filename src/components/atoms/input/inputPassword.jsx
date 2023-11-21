@@ -1,6 +1,6 @@
 import { View, TextInput, StyleSheet} from "react-native";
 
-import  ForgotPassword  from "../button/forgotPassword";
+import  ForgotPassword  from "../button/forgotPasswordButton.jsx";
 
 const InputPassword = ({ setPassword, navigation, showButtons, placeholderText }) => {
     const handlePasswordChange = (text) => {

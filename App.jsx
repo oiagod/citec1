@@ -10,7 +10,8 @@ import LoginScreen from './src/components/pages/loginScreen/index.jsx';
 // import { CreateAccount } from './telas/createAccount'; create account antiga
 import CreateAccount from './src/components/pages/createAccount/index.js';
 import { HomeScreen } from './telas/homeScreen';
-import { ForgotPassword } from './telas/forgotPassword';
+// import { ForgotPassword } from './telas/forgotPassword';
+import ForgotPassword from './src/components/pages/forgotPassowrd/index.jsx';
 // import { UserProfile } from './telas/userProfile';
 
 const Stack = createNativeStackNavigator();
