@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useFonts } from 'expo-font';
-import { Text } from 'react-native';
+
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -13,6 +13,7 @@ import { HomeScreen } from './telas/homeScreen';
 // import { ForgotPassword } from './telas/forgotPassword';
 import ForgotPassword from './src/components/pages/forgotPassowrd/index.jsx';
 // import { UserProfile } from './telas/userProfile';
+import UserProfile from './src/components/pages/userProfile/index.jsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -41,7 +42,7 @@ export default function App() {
         <Stack.Screen name="CreateAccount" component={CreateAccount} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        {/* <Stack.Screen name="UserProfile" component={UserProfile}/> */}
+        <Stack.Screen name="UserProfile" component={UserProfile}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

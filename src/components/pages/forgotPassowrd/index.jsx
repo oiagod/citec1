@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, View,  Image,  StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
+import { SafeAreaView, StyleSheet, View,  Image,  StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
 
 import InputEmail from '../../atoms/input/inputEmail';
 import LoginButton from '../../atoms/button/login';
 import ReturnButton from '../../atoms/button/returnButton';
 
 const ForgotPassword = ({navigation}) => {
+    
+    const [email, setEmail] = useState()
+
     return(
         <SafeAreaView style={styles.container}>
             <KeyboardAvoidingView 
@@ -17,7 +20,7 @@ const ForgotPassword = ({navigation}) => {
             </View>
                 <View style={styles.formBox}>
                     <Image source={require('../../../assets/Logo.png')} style={styles.logo} />
-                    <InputEmail />
+                    <InputEmail setEmail={setEmail}/>
                     <LoginButton buttonText='Recuperar Senha'/>
                 </View>
             </KeyboardAvoidingView>

@@ -36,9 +36,6 @@ const styles = StyleSheet.create ({
         // justifyContent: 'center'
     },
 
-    createButton: {
-
-    },
 })
 
 export default LoginForm;
