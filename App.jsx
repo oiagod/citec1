@@ -6,13 +6,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
 import LoginScreen from './src/components/pages/loginScreen/index.jsx';
-// import { LoginScreen } from './telas/loginScreen'; login screen antiga
-// import { CreateAccount } from './telas/createAccount'; create account antiga
 import CreateAccount from './src/components/pages/createAccount/index.js';
 import { HomeScreen } from './telas/homeScreen';
-// import { ForgotPassword } from './telas/forgotPassword';
 import ForgotPassword from './src/components/pages/forgotPassowrd/index.jsx';
-// import { UserProfile } from './telas/userProfile';
 import UserProfile from './src/components/pages/userProfile/index.jsx';
 
 const Stack = createNativeStackNavigator();
