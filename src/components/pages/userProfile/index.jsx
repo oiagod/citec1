@@ -1,10 +1,13 @@
 import React, { cloneElement, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar, Modal } from "react-native";
+import { useProfilePhoto } from '../../atoms/context/profilePhoto';
 
 import ReturnButton from "../../atoms/button/returnButton";
 import Separator from "../../atoms/plain/separator";
 
 const UserProfile = ({ navigation }) => {
+
+    const { profilePhoto } = useProfilePhoto();
 
     const [configModalVisible, setConfigModalVisible] = useState(false);
     const [historyModalVisible, setHistoryModalVisible] = useState(false);
@@ -44,7 +47,7 @@ const UserProfile = ({ navigation }) => {
                 <ReturnButton navigation={navigation} />
             </View>
             <View style={styles.header}>
-                <Image style={{ borderRadius: 200 }} source={require('../../../assets/user-icon.jpg')} />
+                <Image style={{ borderRadius: 200, height: 200, width: 200 }} source={profilePhoto} />
             </View>
             <View style={{ alignItems: "center" }}>
                 <Text style={styles.textWhite}>Nome do usuário</Text>

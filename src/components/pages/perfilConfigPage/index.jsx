@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar, Modal } from "react-native";
+import { useProfilePhoto } from '../../atoms/context/profilePhoto';
 
 import ReturnButton from "../../atoms/button/returnButton";
 
 const PerfilConfigPage = ({ navigation }) => {
 
-    const [photo, setPhoto] = useState(require('../../../assets/user-icon.jpg'));
+    const { profilePhoto, updateProfilePhoto } = useProfilePhoto();
 
     const [afModalVisible, setafModalVisible] = useState(false);
     const [asModalVisible, setasModalVisible] = useState(false);
@@ -13,7 +14,7 @@ const PerfilConfigPage = ({ navigation }) => {
     const [sModalVisible, setsModalVisible] = useState(false);
 
     const handlePhotoChange = (newPhoto) => {
-        setPhoto(newPhoto);
+        updateProfilePhoto(newPhoto);
         closeafModal();
     };
 
@@ -59,7 +60,7 @@ const PerfilConfigPage = ({ navigation }) => {
                 <ReturnButton navigation={navigation} />
             </View>
             <View style={styles.header2}>
-                <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={photo} />
+                <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={profilePhoto} />
                 <View style={{ marginLeft: 15 }}>
                     <Text style={styles.textWhite}>Nome do usuário</Text>
                 </View>

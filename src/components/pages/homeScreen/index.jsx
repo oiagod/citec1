@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, StatusBar } from 'react-native';
+import { useProfilePhoto } from '../../atoms/context/profilePhoto';
 
 
 export const HomeScreen = ({ navigation }) => {
@@ -7,6 +8,8 @@ export const HomeScreen = ({ navigation }) => {
     const returnPage = () => {
         navigation.goBack();
     }
+
+    const { profilePhoto } = useProfilePhoto();
 
     return (
         <View style={ styles.container}>
@@ -16,7 +19,7 @@ export const HomeScreen = ({ navigation }) => {
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={ styles.profileImage} onPress={() => { navigation.navigate("UserProfile") }}>
-                <Image style={{  width: 25, height: 25, borderRadius: 200}} source={require('../../src/assets/user-icon.jpg')}/>
+                <Image style={{  width: 25, height: 25, borderRadius: 200}} source={profilePhoto}/>
             </TouchableOpacity>
             <StatusBar />
         </View>
