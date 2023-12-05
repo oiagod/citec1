@@ -5,14 +5,14 @@ import InputPassword from '../atoms/input/inputPassword.jsx';
 import LoginButton from '../atoms/button/login.jsx';
 import InputConfirmPassowrd from '../atoms/input/inputConfirmPassowrd.jsx';
 
-const CreateAccountForm = ({ navigation, setEmail, setPassword, buttonText, showButtons, setPassword2}) => {
+const CreateAccountForm = ({ navigation, setEmail, setPassword, buttonText, showButtons, setPassword2, email, password, password2}) => {
     return (
         <View style={styles.container}>
             <View style={ styles.formBox }>
                 <InputEmail setEmail={setEmail}/>
                 <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons}/>
                 <InputConfirmPassowrd setPassword2={setPassword2}/>
-                <LoginButton navigation={navigation} buttonText={buttonText}/>
+                <LoginButton navigation={navigation} buttonText={buttonText} email={email} password={password} password2={password2}/>
             </View>
         </View>
     )

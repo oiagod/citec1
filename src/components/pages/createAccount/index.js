@@ -1,10 +1,11 @@
 import React, { useState} from "react";
 import { View, StyleSheet, SafeAreaView, Image, KeyboardAvoidingView, Platform} from 'react-native';
 
+
 import CreateAccountForm from "../../molecules/createAccountForm";
 import LoginFooter from "../../molecules/loginFooter";
 import ReturnButton from "../../atoms/button/returnButton";
-import InputConfirmPassowrd from "../../atoms/input/inputConfirmPassowrd";
+
 
 const CreateAccount = ({ navigation}) => {
     const [email, setEmail] = useState()
@@ -38,6 +39,9 @@ const handlePasswordChange = (text) => {
               setPassword={setPassword}
               setPassword2={setPassword2}
               buttonText={"Criar Conta"}
+              email={email}
+              password={password}
+              password2={password2}
             />
             <View styles={styles.loginbox}>
             </View>

@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useFonts } from 'expo-font';
-
+import { AppRegistry } from 'react-native';
+import { app } from './src/Services/firebaseConfig.js';
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";

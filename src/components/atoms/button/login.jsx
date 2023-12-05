@@ -1,10 +1,28 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-const LoginButton = ({navigation, buttonText = 'Login'}) => {
-  const handleLogin = ({ email, password }) => {
-    navigation.navigate("HomeScreen")
+const auth = getAuth();
+
+const LoginButton = ({navigation, buttonText = 'Login', email, password}) => {
+  const handleLogin = () => {
     console.log("Email: ", email);
     console.log("Password: ", password);
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage);
+    // ..
+  });
+
+    console.log("Email: ", email);
+    console.log("Password: ", password);
+    navigation.navigate("Login")
   };
   return (
     <TouchableOpacity style={ styles.loginbutton } onPress={handleLogin}>
