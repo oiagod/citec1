@@ -192,7 +192,7 @@ const PerfilConfigPage = ({ navigation }) => {
                             </TouchableOpacity>
                             <View style={{ alignItems: 'center', top: '20%' }}>
                                 <Text style={{ color: '#C3C3C3', fontFamily: 'Montserrat-Regular', fontSize: 20 }}>Tem certeza que deseja sair?</Text>
-                                <Text style={{margin: 30, color: '#C3C3C3', fontFamily: 'Montserrat-Regular', fontSize: 16 }}>Isto irá te deslogar da conta</Text>
+                                <Text style={{ margin: 30, color: '#C3C3C3', fontFamily: 'Montserrat-Regular', fontSize: 16 }}>Isto irá te deslogar da conta</Text>
                             </View>
                             <View style={{ top: '30%' }}>
                                 <TouchableOpacity onPress={sairConta} style={{
