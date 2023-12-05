@@ -8,21 +8,22 @@ import ReturnButton from "../../atoms/button/returnButton";
 
 
 const CreateAccount = ({ navigation}) => {
+    const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [password2, setPassword2] = useState()
 
-const handleEmailChange = (text) => {
-    setEmail(text);
-};
+// const handleEmailChange = (text) => {
+//     setEmail(text);
+// };
 
-const handlePasswordChange = (text) => {
-    setPassword(text);
-  };
+// const handlePasswordChange = (text) => {
+//     setPassword(text);
+//   };
 
-  const handlePassword2Change = (text) => {
-    setPassword2(text);
-  };
+//   const handlePassword2Change = (text) => {
+//     setPassword2(text);
+//   };
 
   return (
     <SafeAreaView style={ styles.container}>
@@ -35,6 +36,7 @@ const handlePasswordChange = (text) => {
             <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
             <CreateAccountForm 
               navigation={navigation}
+              setUsername={setUsername}
               setEmail={setEmail}
               setPassword={setPassword}
               setPassword2={setPassword2}
