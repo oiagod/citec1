@@ -7,11 +7,11 @@ import LoginFooter from "../../molecules/loginFooter";
 import ReturnButton from "../../atoms/button/returnButton";
 
 
-const CreateAccount = ({ navigation}) => {
-    const [username, setUsername] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [password2, setPassword2] = useState()
+const CreateAccount = ({ navigation }) => {
+  const [username, setUsername] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [password2, setPassword2] = useState()
 
 // const handleEmailChange = (text) => {
 //     setEmail(text);
@@ -31,7 +31,9 @@ const CreateAccount = ({ navigation}) => {
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'} 
         style={styles.KeyboardAvoidingContainer}
       >
-        <ReturnButton navigation={navigation}/>
+          <View style={{top: 30, left: 10}} >
+            <ReturnButton navigation={navigation} />
+          </View>
           <View>
             <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
             <CreateAccountForm 
@@ -41,6 +43,7 @@ const CreateAccount = ({ navigation}) => {
               setPassword={setPassword}
               setPassword2={setPassword2}
               buttonText={"Criar Conta"}
+              username={username}
               email={email}
               password={password}
               password2={password2}

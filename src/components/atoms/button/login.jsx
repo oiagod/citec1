@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 const auth = getAuth();
 
-const LoginButton = ({navigation, buttonText = 'Login', email, password}) => {
+const LoginButton = ({ navigation, buttonText = 'Login', email, password }) => {
   const handleLogin = () => {
     console.log("Email: ", email);
     console.log("Password: ", password);
@@ -22,29 +22,29 @@ const LoginButton = ({navigation, buttonText = 'Login', email, password}) => {
     navigation.navigate("HomeScreen")
   };
   return (
-    <TouchableOpacity style={ styles.loginbutton } onPress={handleLogin}>
-      <Text style={ styles.loginButtonText }>{buttonText}</Text>
+    <TouchableOpacity style={styles.loginbutton} onPress={handleLogin}>
+      <Text style={styles.loginButtonText}>{buttonText}</Text>
     </TouchableOpacity>
   )
-        
+
 }
 
-const styles = StyleSheet.create ({
-    loginbutton: {
-        width: '90%',
-        backgroundColor: '#004222',
-        marginBottom: 20,
-        borderRadius: 20,
-        alignItems: "center",
-        justifyContent: 'center',
-        height: 50,
-      },
+const styles = StyleSheet.create({
+  loginbutton: {
+    width: '90%',
+    backgroundColor: '#004222',
+    marginBottom: 20,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: 'center',
+    height: 50,
+  },
 
-      loginButtonText: {
-        color: '#C3C3C3',
-        fontSize: 25,
-        fontFamily: 'Montserrat-SemiBold',
-      },
+  loginButtonText: {
+    color: '#C3C3C3',
+    fontSize: 25,
+    fontFamily: 'Montserrat-SemiBold',
+  },
 })
 
 export default LoginButton;

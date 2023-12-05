@@ -79,8 +79,8 @@ export const ForgotPassword = ({ navigation }) => {
                             </View>
                         </TouchableOpacity>
                         <Text style={styles.modalText}>Coloque o codigo de verificação:</Text>
-                        <TextInput style={styles.inputCode} placeholder='                                         ' keyboardType="numeric" onChangeText={(text) => {setVerificationCode(text)}} />
-                        <TouchableOpacity style={{position: 'relative', width: 100, backgroundColor: '#004222', borderRadius: 20, height: 50, alignItems: 'center', justifyContent: 'center'}} title="Validate" onPress={handleCodeValidation}>
+                        <TextInput style={styles.inputCode} placeholder='                                         ' keyboardType="numeric" onChangeText={(text) => { setVerificationCode(text) }} />
+                        <TouchableOpacity style={{ position: 'relative', width: 100, backgroundColor: '#004222', borderRadius: 20, height: 50, alignItems: 'center', justifyContent: 'center' }} title="Validate" onPress={handleCodeValidation}>
                             <Text style={styles.textWhite}>OK</Text>
                         </TouchableOpacity>
                     </View>
@@ -186,5 +186,5 @@ const styles = StyleSheet.create({
         color: '#C3C3C3',
         fontSize: 20,
         fontFamily: 'Montserrat-Medium',
-      },
+    },
 });
