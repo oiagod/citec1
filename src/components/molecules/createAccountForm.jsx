@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacit
 
 import InputEmail from '../atoms/input/inputEmail.jsx';
 import InputPassword from '../atoms/input/inputPassword.jsx';
-import LoginButton from '../atoms/button/login.jsx';
+import CreateAccountButton from '../atoms/button/createAccount.jsx';
 import InputConfirmPassowrd from '../atoms/input/inputConfirmPassowrd.jsx';
 
 const CreateAccountForm = ({ navigation, setEmail, setPassword, buttonText, showButtons, setPassword2, email, password, password2}) => {
@@ -12,7 +12,7 @@ const CreateAccountForm = ({ navigation, setEmail, setPassword, buttonText, show
                 <InputEmail setEmail={setEmail}/>
                 <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons}/>
                 <InputConfirmPassowrd setPassword2={setPassword2}/>
-                <LoginButton navigation={navigation} buttonText={buttonText} email={email} password={password} password2={password2}/>
+                <CreateAccountButton navigation={navigation} buttonText={buttonText} email={email} password={password} password2={password2}/>
             </View>
         </View>
     )

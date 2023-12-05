@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View,  Image,  StatusBar, KeyboardAvoidingView, Platform } from 'react-native';
 
 import InputEmail from '../../atoms/input/inputEmail';
-import LoginButton from '../../atoms/button/login';
+import LoginButton from '../../atoms/button/createAccount';
 import ReturnButton from '../../atoms/button/returnButton';
 
 const ForgotPassword = ({navigation}) => {

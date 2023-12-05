@@ -3,18 +3,17 @@ import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacit
 import InputEmail from '../atoms/input/inputEmail.jsx';
 import InputPassword from '../atoms/input/inputPassword.jsx';
 import LoginButton from '../atoms/button/login.jsx';
-import CreateAccountButton from '../atoms/button/createAcc.jsx';
-import InputConfirmPassowrd from '../atoms/input/inputConfirmPassowrd.jsx';
+import CreateAccountPageButton from '../atoms/button/createAcc.jsx';
 
-const LoginForm = ({ navigation, setEmail, setPassword, buttonText, showButtons,}) => {
+const LoginForm = ({ navigation, setEmail, setPassword, buttonText, showButtons, email, password}) => {
     return (
         <View style={styles.container}>
             <View style={ styles.formBox }>
                 <InputEmail setEmail={setEmail}/>
                 <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons}/>
-                <LoginButton navigation={navigation} buttonText={buttonText}/>
+                <LoginButton navigation={navigation} buttonText={buttonText} email={email} password={password}/>
                 {showButtons && (
-                    <CreateAccountButton navigation={navigation} style={styles.createButton}/>
+                    <CreateAccountPageButton navigation={navigation} style={styles.createButton}/>
                 )}
             </View>
         </View>

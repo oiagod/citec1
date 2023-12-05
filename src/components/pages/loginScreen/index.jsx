@@ -25,6 +25,8 @@ const LoginScreen = ({ navigation }) => {
           setPassword={setPassword}
           buttonText={"Login"}
           showButtons={true}
+          email={email}
+          password={password}
         />
       </View>
     </KeyboardAvoidingView>

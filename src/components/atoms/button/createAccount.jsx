@@ -1,16 +1,17 @@
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
-const LoginButton = ({navigation, buttonText = 'Login', email, password}) => {
-  const handleLogin = () => {
+const CreateAccountButton = ({navigation, buttonText = 'Login', email, password}) => {
+  const handleCreateAccount = () => {
     console.log("Email: ", email);
     console.log("Password: ", password);
-  signInWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
 
+    // ...
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -19,10 +20,12 @@ const LoginButton = ({navigation, buttonText = 'Login', email, password}) => {
     // ..
   });
 
-    navigation.navigate("HomeScreen")
+    console.log("Email: ", email);
+    console.log("Password: ", password);
+    navigation.navigate("Login")
   };
   return (
-    <TouchableOpacity style={ styles.loginbutton } onPress={handleLogin}>
+    <TouchableOpacity style={ styles.loginbutton } onPress={handleCreateAccount}>
       <Text style={ styles.loginButtonText }>{buttonText}</Text>
     </TouchableOpacity>
   )
@@ -47,4 +50,4 @@ const styles = StyleSheet.create ({
       },
 })
 
-export default LoginButton;
+export default CreateAccountButton;
