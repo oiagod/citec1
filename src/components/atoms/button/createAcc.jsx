@@ -1,6 +1,6 @@
 import { Text, View,TouchableOpacity, StyleSheet } from "react-native";
 
-const CreateAccountButton = ({ navigation }) => {
+const CreateAccountPageButton = ({ navigation }) => {
     const createAccount = () => {
         navigation.navigate("CreateAccount")
       };
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CreateAccountButton;
+export default CreateAccountPageButton;
