@@ -5,10 +5,17 @@ import ReturnButton from "../../atoms/button/returnButton";
 
 const PerfilConfigPage = ({ navigation }) => {
 
+    const [photo, setPhoto] = useState(require('../../../assets/user-icon.jpg'));
+
     const [afModalVisible, setafModalVisible] = useState(false);
     const [asModalVisible, setasModalVisible] = useState(false);
     const [aeModalVisible, setaeModalVisible] = useState(false);
     const [sModalVisible, setsModalVisible] = useState(false);
+
+    const handlePhotoChange = (newPhoto) => {
+        setPhoto(newPhoto);
+        closeafModal();
+    };
 
     const openafModal = () => {
         setafModalVisible(true);
@@ -52,7 +59,7 @@ const PerfilConfigPage = ({ navigation }) => {
                 <ReturnButton navigation={navigation} />
             </View>
             <View style={styles.header2}>
-                <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={require('../../../assets/user-icon.jpg')} />
+                <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={photo} />
                 <View style={{ marginLeft: 15 }}>
                     <Text style={styles.textWhite}>Nome do usuário</Text>
                 </View>
@@ -99,6 +106,17 @@ const PerfilConfigPage = ({ navigation }) => {
                             <TouchableOpacity onPress={closeafModal}>
                                 <Text style={styles.interno} >X</Text>
                             </TouchableOpacity>
+                            <View style={{ alignItems: 'center',  top: '20%'}}>
+                                <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => handlePhotoChange(require('../../../assets/user-icon2.jpg'))}>
+                                    <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={require('../../../assets/user-icon2.jpg')} />
+                                <Text style={styles.textWhite}>Alterar para Foto 1</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={{ alignItems: 'center', top: '30%' }} onPress={() => handlePhotoChange(require('../../../assets/user-icon.jpg'))}>
+                                    <Image style={{ borderRadius: 200, height: 58, width: 58 }} source={require('../../../assets/user-icon.jpg')} />
+                                <Text style={styles.textWhite}>Alterar para Foto 2</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                 </Modal>
