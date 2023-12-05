@@ -2,11 +2,23 @@ import { Text, TouchableOpacity, StyleSheet } from "react-native";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
 import { db } from "../../../Services/firebaseConfig";
+import Toast from "react-native-toast-message";
 
 const auth = getAuth();
 
 const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email, password }) => {
   const handleCreateAccount = () => {
+
+    if (!username) {
+      Toast.show({
+        type: 'error',
+        text1: 'Nome de usuário inválido',
+        text2: 'Porfavor, insira um nome de usuário válido',
+        visibilityTime: 4000,
+      });
+      return; //esse return impede a execução do restante do código
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -27,6 +39,13 @@ const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email
       })
       .catch((error) => {
         console.log("Erro ao criar usuário ou documento no Firestore:", error.message);
+
+        Toast.show({
+          type: 'error',
+          text1: 'Erro ao criar a conta',
+          text2: error.message,
+          visibilityTime: 4000,
+        });
       });
   };
 

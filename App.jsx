@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import { AppRegistry } from 'react-native';
 import { app } from './src/Services/firebaseConfig.js';
+import Toast from "react-native-toast-message";
 
 import { ProfilePhotoProvider } from './src/components/atoms/context/profilePhoto.jsx';
 
@@ -64,6 +65,7 @@ export default function App() {
             <Stack.Screen name="PerfilConfigPage" component={PerfilConfigPage} />
           </Stack.Navigator>
         )}
+        <Toast />
       </NavigationContainer>
     </ProfilePhotoProvider>
   );
