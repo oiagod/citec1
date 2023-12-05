@@ -10,7 +10,7 @@ const CreateAccountForm = ({ navigation, setEmail, setPassword, buttonText, show
         <View style={styles.container}>
             <View style={ styles.formBox }>
                 <InputEmail setEmail={setEmail}/>
-                <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons}/>
+                <InputPassword setPassword={setPassword} showButtons={showButtons}/>
                 <InputConfirmPassowrd setPassword2={setPassword2}/>
                 <LoginButton navigation={navigation} buttonText={buttonText}/>
             </View>

@@ -10,6 +10,7 @@ import CreateAccount from './src/components/pages/createAccount/index.js';
 import { HomeScreen } from './telas/homeScreen';
 import ForgotPassword from './src/components/pages/forgotPassowrd/index.jsx';
 import UserProfile from './src/components/pages/userProfile/index.jsx';
+import PerfilConfigPage from './src/components/pages/perfilConfigPage/index.jsx'
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,7 @@ export default function App() {
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="UserProfile" component={UserProfile}/>
+        <Stack.Screen name="PerfilConfigPage" component={PerfilConfigPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

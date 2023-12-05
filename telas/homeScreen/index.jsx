@@ -16,7 +16,7 @@ export const HomeScreen = ({ navigation }) => {
                 </View>
             </TouchableOpacity>
             <TouchableOpacity style={ styles.profileImage} onPress={() => { navigation.navigate("UserProfile") }}>
-                <Image style={{  width: 25, height: 25,}} source={require('../../src/assets/user-icon.jpg')}/>
+                <Image style={{  width: 25, height: 25, borderRadius: 200}} source={require('../../src/assets/user-icon.jpg')}/>
             </TouchableOpacity>
             <StatusBar />
         </View>

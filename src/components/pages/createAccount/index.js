@@ -1,21 +1,21 @@
-import React, { useState} from "react";
-import { View, StyleSheet, SafeAreaView, Image, KeyboardAvoidingView, Platform} from 'react-native';
+import React, { useState } from "react";
+import { View, StyleSheet, SafeAreaView, Image, KeyboardAvoidingView, Platform } from 'react-native';
 
 import CreateAccountForm from "../../molecules/createAccountForm";
 import LoginFooter from "../../molecules/loginFooter";
 import ReturnButton from "../../atoms/button/returnButton";
 import InputConfirmPassowrd from "../../atoms/input/inputConfirmPassowrd";
 
-const CreateAccount = ({ navigation}) => {
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [password2, setPassword2] = useState()
+const CreateAccount = ({ navigation }) => {
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [password2, setPassword2] = useState()
 
-const handleEmailChange = (text) => {
+  const handleEmailChange = (text) => {
     setEmail(text);
-};
+  };
 
-const handlePasswordChange = (text) => {
+  const handlePasswordChange = (text) => {
     setPassword(text);
   };
 
@@ -24,40 +24,42 @@ const handlePasswordChange = (text) => {
   };
 
   return (
-    <SafeAreaView style={ styles.container}>
-      <KeyboardAvoidingView 
-        behavior={Platform.OS == 'ios' ? 'padding' : 'height'} 
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
         style={styles.KeyboardAvoidingContainer}
       >
-        <ReturnButton navigation={navigation}/>
-          <View>
-            <Image source={require('../../../assets/Logo.png')} style={ styles.logo}/>
-            <CreateAccountForm 
-              navigation={navigation}
-              setEmail={setEmail}
-              setPassword={setPassword}
-              setPassword2={setPassword2}
-              buttonText={"Criar Conta"}
-            />
-            <View styles={styles.loginbox}>
-            </View>
+        <View style={{top: 30, left: 10}} >
+          <ReturnButton navigation={navigation} />
+        </View>
+        <View>
+          <Image source={require('../../../assets/Logo.png')} style={styles.logo} />
+          <CreateAccountForm
+            navigation={navigation}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            setPassword2={setPassword2}
+            buttonText={"Criar Conta"}
+          />
+          <View styles={styles.loginbox}>
           </View>
+        </View>
       </KeyboardAvoidingView>
       <LoginFooter />
-        {/* <StatusBar /> */}
+      {/* <StatusBar /> */}
     </SafeAreaView>
   )
 
 }
 
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#191919',
     // justifyContent: 'flex-end',
     paddingHorizontal: 10,
   },
-  
+
   logo: {
     marginBottom: '25%',
     alignSelf: 'center',
