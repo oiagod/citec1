@@ -26,7 +26,7 @@ const LoginButton = ({ navigation, buttonText = 'Login', email, password }) => {
     const errorCode = error.code;
     const errorMessage = error.message;
 
-    if (errorCode === "auth/wrong-passowrd" || errorCode === "auth/user-not-found" || errorCode === "auth/invalid-email") {
+    if (errorCode === "auth/wrong-passowrd" || errorCode === "auth/user-not-found" || errorCode === "auth/invalid-email" || errorCode === "auth/invalid-credential" ) {
       Toast.show({
         type: 'error',
         text1: 'Credenciais inválidas',

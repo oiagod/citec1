@@ -31,7 +31,7 @@ const CreateAccount = ({ navigation }) => {
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'} 
         style={styles.KeyboardAvoidingContainer}
       >
-          <View style={{top: 30, left: 10}} >
+          <View style={{top: 100, left: 10}} >
             <ReturnButton navigation={navigation} />
           </View>
           <View>

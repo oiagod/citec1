@@ -11,7 +11,7 @@ const InputConfirmPassowrd = ({ setPassword2, placeholderText }) => {
     <View style={styles.loginbox}>
       <TextInput
         style={styles.inputPassword}
-        placeholder={"Confirmar senha"}
+        placeholder={placeholderText}
         placeholderTextColor="#C3C3C3"
         secureTextEntry={true}
         onChangeText={handlePasswordChange}

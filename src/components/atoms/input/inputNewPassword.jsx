@@ -2,9 +2,9 @@ import { View, TextInput, StyleSheet} from "react-native";
 
 import  ForgotPassword  from "../button/forgotPasswordButton.jsx";
 
-const InputPassword = ({ setPassword, navigation, showButtons, placeholderText }) => {
+const InputNewPassword = ({ setPassword3, navigation, showButtons, placeholderText }) => {
     const handlePasswordChange = (text) => {
-        setPassword(text);
+        setPassword3(text);
       };
 
     return (
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
       },
 })
 
-export default InputPassword;
+export default InputNewPassword;

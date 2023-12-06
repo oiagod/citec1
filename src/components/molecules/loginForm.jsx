@@ -10,7 +10,7 @@ const LoginForm = ({ navigation, setEmail, setPassword, buttonText, showButtons,
         <View style={styles.container}>
             <View style={ styles.formBox }>
                 <InputEmail setEmail={setEmail}/>
-                <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons}/>
+                <InputPassword navigation={navigation} setPassword={setPassword} showButtons={showButtons} placeholderText={"Senha"}/>
                 <LoginButton navigation={navigation} buttonText={buttonText} email={email} password={password}/>
                 {showButtons && (
                     <CreateAccountPageButton navigation={navigation} style={styles.createButton}/>

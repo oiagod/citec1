@@ -3,8 +3,17 @@ import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity, StatusBa
 import { useProfilePhoto } from '../../atoms/context/profilePhoto';
 
 import ReturnButton from "../../atoms/button/returnButton";
+import InputPassword from "../../atoms/input/inputPassword";
+import InputNewPassword from "../../atoms/input/inputNewPassword";
+import InputConfirmPassowrd from "../../atoms/input/inputConfirmPassowrd";
+import ChangePasswordButton from "../../atoms/button/changePassword";
+
 
 const PerfilConfigPage = ({ navigation }) => {
+
+    const [currentPassword, setPassword] = useState();
+    const [newPassword, setPassword3] = useState();
+    const [confirmPassword, setPassword2] = useState();
 
     const { profilePhoto, updateProfilePhoto } = useProfilePhoto();
 
@@ -137,6 +146,7 @@ const PerfilConfigPage = ({ navigation }) => {
                             backgroundColor: 'rgba(0,0,0,0.5)',
                         }}
                     >
+                        
                         <View
                             style={{
                                 backgroundColor: '#191919',
@@ -145,10 +155,22 @@ const PerfilConfigPage = ({ navigation }) => {
                                 borderRadius: 60,
                                 padding: '20',
                             }}
-                        >
+                        >   
                             <TouchableOpacity onPress={closeasModal}>
                                 <Text style={styles.interno}>X</Text>
                             </TouchableOpacity>
+                            <View style={styles.inputInterno1}>
+                                <InputPassword setPassword={setPassword} placeholderText={"Senha atual"}/>
+                            </View>
+                            <View style={styles.inputInterno1}>
+                                <InputNewPassword setPassword3={setPassword3} placeholderText={"Nova senha"}/>
+                            </View>
+                            <View style={styles.inputInterno2}>
+                                <InputConfirmPassowrd setPassword2={setPassword2} placeholderText={"Confirmar senha"}/>
+                            </View>
+                            <View style={styles.buttonInterno}>
+                                <ChangePasswordButton buttonText={"Alterar senha"} currentPassword={currentPassword} newPassword={newPassword} confirmPassword={confirmPassword}/>
+                            </View>
                         </View>
                     </View>
                 </Modal>
@@ -298,6 +320,27 @@ styles = StyleSheet.create({
         paddingLeft: 8,
         paddingTop: 2,
 
+    },
+
+    inputInterno1: {
+        top: 100,
+        left: 14,
+        width: '90%',
+        alignItems: 'center'
+    },
+
+    inputInterno2: {
+        top: 100,
+        left: 14,
+        width: '90%',
+        alignItems: 'center'
+    },
+
+    buttonInterno: {
+        top: 100,
+        left: 14,
+        width: '90%',
+        alignItems: 'center'
     },
 
     stretch: {
