@@ -12,8 +12,8 @@ const CreateAccountForm = ({ navigation, setUsername, setEmail, setPassword, but
             <View style={ styles.formBox }>
                 <InputText setUsername={setUsername}/>
                 <InputEmail setEmail={setEmail}/>
-                <InputPassword setPassword={setPassword} showButtons={showButtons}/>
-                <InputConfirmPassowrd setPassword2={setPassword2}/>
+                <InputPassword placeholderText= {"Senha"} setPassword={setPassword} showButtons={showButtons}/>
+                <InputConfirmPassowrd placeholderText= {"Confirmar Senha"} setPassword2={setPassword2}/>
                 <CreateAccountButton navigation={navigation} buttonText={buttonText} username={username} email={email} password={password} password2={password2}/>
             </View>
         </View>
