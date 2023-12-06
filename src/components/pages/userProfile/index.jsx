@@ -1,6 +1,9 @@
-import React, { cloneElement, useState } from "react";
+import React, { cloneElement, useEffect, useState } from "react";
 import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity, StatusBar, Modal } from "react-native";
 import { useProfilePhoto } from '../../atoms/context/profilePhoto';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getDoc, getFirestore, getDocs, doc, collection, query, where } from "firebase/firestore";
+import db from "../../../Services/firebaseConfig"
 
 import ReturnButton from "../../atoms/button/returnButton";
 import Separator from "../../atoms/plain/separator";
@@ -9,9 +12,44 @@ const UserProfile = ({ navigation }) => {
 
     const { profilePhoto } = useProfilePhoto();
 
+    const [userName, setUserName] = useState("");
+
     const [configModalVisible, setConfigModalVisible] = useState(false);
     const [historyModalVisible, setHistoryModalVisible] = useState(false);
     const [accessibilityModalVisible, setAccessibilityModalVisible] = useState(false);
+
+    useEffect(() => {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                try {
+                    console.log(user.uid)
+
+                    const usersCollectionRef = collection(db, "users");
+                    const userDocQuery = query(usersCollectionRef, where("uid", "==", user.uid));
+                    const userDocsSnapshot = await getDocs(userDocQuery);
+
+                    if (!userDocsSnapshot.empty) {
+                        const userDocSnapshot = userDocsSnapshot.docs[0];
+                        const userNameFromFirestore = userDocSnapshot.data().Name;
+                        console.log("Nome do usuário do Firestore:", userNameFromFirestore);
+                        setUserName(userNameFromFirestore);
+                    } else {
+                        console.error("Documento não encontrado no Firestore para o UID:", user.uid);
+                        console.log("Snapshot:", userDocsSnapshot); // Adicione esta linha
+                    }
+                } catch (error) {
+                    console.log("Erro ao buscar o nome do usuário", error);
+                }
+            } else {
+                console.log("Usuário não autenticado");
+            }
+        });
+
+        return () => unsubscribe(); // Função de limpeza para desinscrever do listener ao desmontar o componente
+    }, []); // O segundo argumento [] garante que o useEffect seja executado apenas uma vez ao montar o componente
+
+    
 
     const openConfigModal = () => {
         setConfigModalVisible(true);
@@ -50,7 +88,7 @@ const UserProfile = ({ navigation }) => {
                 <Image style={{ borderRadius: 200, height: 200, width: 200 }} source={profilePhoto} />
             </View>
             <View style={{ alignItems: "center" }}>
-                <Text style={styles.textWhite}>Nome do usuário</Text>
+                <Text style={styles.textWhite}>{userName}</Text>
             </View>
             <TouchableOpacity style={{ alignItems: 'center' }} onPress={PerfilConfigPage}>
                 <Text style={styles.perfilText}>Ver perfil</Text>
