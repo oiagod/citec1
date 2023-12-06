@@ -6,7 +6,7 @@ import Toast from "react-native-toast-message";
 
 const auth = getAuth();
 
-const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email, password }) => {
+const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email, password, password2 }) => {
   const handleCreateAccount = () => {
 
     if (!username) {
@@ -17,6 +17,16 @@ const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email
         visibilityTime: 4000,
       });
       return; //esse return impede a execução do restante do código
+    }
+
+    if (password !== password2) {
+      Toast.show({
+        type: 'error',
+        text1: 'Senhas não coincidem',
+        text2: 'A nova senha e a confirmação de senhas deve ser iguais',
+        visibilityTime: 4000,
+      });
+      return;
     }
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -35,7 +45,13 @@ const CreateAccountButton = ({ navigation, buttonText = 'Login', username, email
         console.log("Email: ", email);
         console.log("Password: ", password);
 
-        navigation.navigate("Login");
+        Toast.show({
+          type: 'success',
+          text1: 'Usuário criado com sucesso',
+          visibilityTime: 4000,
+        });
+
+        navigation.navigate("HomeScreen");
       })
       .catch((error) => {
         console.log("Erro ao criar usuário ou documento no Firestore:", error.message);

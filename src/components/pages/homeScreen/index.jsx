@@ -1,26 +1,14 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, StatusBar } from 'react-native';
-import { useProfilePhoto } from '../../atoms/context/profilePhoto';
 
+import Header from '../../header/index.js';
+import Map from '../../map/index.js';
 
-export const HomeScreen = ({ navigation }) => {
-
-    const returnPage = () => {
-        navigation.goBack();
-    }
-
-    const { profilePhoto } = useProfilePhoto();
-
+const HomeScreen = ({ navigation }) => {
     return (
         <View style={ styles.container}>
-            <TouchableOpacity style={styles.returnButton} onPress={returnPage}>
-                <View style={{ alignItems: 'center' }}>
-                    <Text style={{ fontSize: 50, color: '#C3C3C3' }}>‹</Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity style={ styles.profileImage} onPress={() => { navigation.navigate("UserProfile") }}>
-                <Image style={{  width: 25, height: 25, borderRadius: 200}} source={profilePhoto}/>
-            </TouchableOpacity>
+            <Map></Map>
+            <Header navigation={navigation}></Header>
             <StatusBar />
         </View>
     );
@@ -28,19 +16,8 @@ export const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        height: '100%',
-        backgroundColor: '#191919',
-        paddingHorizontal: 10,
-    },
-
-    returnButton: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1,
-        width: 60, // Adjust the width as needed
-        height: 60, // Adjust the height as needed
+        flex: 1,
+        backgroundColor: '#dadada',
     },
 
     profileImage: {
@@ -53,3 +30,5 @@ const styles = StyleSheet.create({
         height: 60,
        },
 });
+
+export default HomeScreen;

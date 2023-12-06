@@ -11,7 +11,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import LoginScreen from './src/components/pages/loginScreen/index.jsx';
 import CreateAccount from './src/components/pages/createAccount/index.js';
-import { HomeScreen } from './src/components/pages/homeScreen/index.jsx';
+import HomeScreen from './src/components/pages/homeScreen/index.jsx';
 import ForgotPassword from './src/components/pages/forgotPassowrd/index.jsx';
 import UserProfile from './src/components/pages/userProfile/index.jsx';
 import PerfilConfigPage from './src/components/pages/perfilConfigPage/index.jsx';
